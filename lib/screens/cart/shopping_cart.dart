@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fongi/screens/payment_gateway/components/components.dart';
+import 'package:fongi/screens/payment_gateway/personal-info_screen.dart';
 
 import 'package:sizer/sizer.dart';
 
@@ -85,7 +87,9 @@ class ShoppingCartPage extends StatelessWidget {
 
   Widget _submitButton(BuildContext context) {
     return TextButton(
-      onPressed: () {},
+      onPressed: () {
+        navigateTo(context, PersonalInfo());
+      },
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(borderRadius: BorderRadius.zero),
@@ -94,6 +98,7 @@ class ShoppingCartPage extends StatelessWidget {
       ),
       child: Container(
         alignment: Alignment.center,
+        height: 30,
         padding: EdgeInsets.symmetric(vertical: 4),
         width: double.infinity,
         child: TitleText(
@@ -108,7 +113,7 @@ class ShoppingCartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
+      appBar: AppBar(
           backgroundColor: kMainColor,
           elevation: 0,
           title: Text("Shopping Cart"),
@@ -208,12 +213,12 @@ class ShoppingCartPage extends StatelessWidget {
                 children: [
                   Text("Total Price"),
                   Text("1450\$"),
-
                 ],
               ),
             ),
             _submitButton(context)
           ],
-        ));
+        )
+    );
   }
 }
