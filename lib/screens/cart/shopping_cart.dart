@@ -88,7 +88,13 @@ class ShoppingCartPage extends StatelessWidget {
   Widget _submitButton(BuildContext context) {
     return TextButton(
       onPressed: () {
-        navigateTo(context, PersonalInfo());
+
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+              builder: (context) => PersonalInfo()
+          ),
+        );
       },
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
