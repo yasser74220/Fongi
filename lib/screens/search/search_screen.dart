@@ -13,8 +13,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   var searchController = TextEditingController();
-  List<Product> allproducts = products;
-  List<Product> listpro = products;
+    List<Product> allproducts = products;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +59,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) => DetailsScreen(
-                                  product: products[index],
+                                  product: allproducts[index],
                                 ),
                               ));
                         },
@@ -73,7 +72,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   void searchProduct(String query) {
-    final filter = listpro.where((product) {
+    final filter = products.where((product) {
       final productTitle = product.title.toLowerCase();
       final input = query.toLowerCase();
       return productTitle.contains(input);

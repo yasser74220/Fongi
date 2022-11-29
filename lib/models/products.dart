@@ -19,7 +19,7 @@ class Product {
 
 List<Product> products = [
   Product(
-      id: 1,
+      id: 0,
       title: "Green T-shirt",
       price: 234,
       size: 120,
@@ -27,7 +27,7 @@ List<Product> products = [
       image: "assets/images/1.png",
       color: kMainColor),
   Product(
-      id: 2,
+      id: 1,
       title: "Blue T-shirt",
       price: 234,
       size: 120,
@@ -35,7 +35,7 @@ List<Product> products = [
       image: "assets/images/2.png",
       color: kMainColor),
   Product(
-      id: 3,
+      id: 2,
       title: "Grey T-shirt",
       price: 234,
       size: 100,
@@ -43,7 +43,7 @@ List<Product> products = [
       image: "assets/images/3.png",
       color:kMainColor),
   Product(
-      id: 4,
+      id: 3,
       title: "White T-shirt",
       price: 234,
       size: 110,
@@ -51,7 +51,7 @@ List<Product> products = [
       image: "assets/images/4.png",
       color: kMainColor),
   Product(
-      id: 5,
+      id: 4,
       title: "Black T-shirt",
       price: 234,
       size: 120,
@@ -59,7 +59,7 @@ List<Product> products = [
       image: "assets/images/5.png",
       color: kMainColor),
   Product(
-    id: 6,
+    id: 5,
     title: "Cyan T-Shirt",
     price: 234,
     size: 120,

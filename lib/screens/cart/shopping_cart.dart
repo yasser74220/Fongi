@@ -118,113 +118,118 @@ class ShoppingCartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          backgroundColor: kMainColor,
-          elevation: 0,
-          title: Text("Shopping Cart"),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Container(
-              height: 700,
-              padding: const EdgeInsets.all(15),
-              child: SingleChildScrollView(
-                physics: BouncingScrollPhysics(),
-                child: Column(
-                  mainAxisSize: MainAxisSize.max,
-                  children: <Widget>[
-                    _item(Product(
-                        id: 2,
-                        title: "Green T-Shirt",
-                        price: 234,
-                        size: 120,
-                        description: dummyText,
-                        image: "assets/images/1.png",
-                        color: kMainColor)),
-                    Divider(
-                      thickness: 1,
-                      height: 50,
+    return Sizer(
+      builder: (context, orientation, deviceType) {
+        return Scaffold(
+            appBar: AppBar(
+              backgroundColor: kMainColor,
+              elevation: 0,
+              title: Text("Shopping Cart"),
+            ),
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  height: 76.h,
+                  padding: const EdgeInsets.all(15),
+                  child: SingleChildScrollView(
+                    physics: BouncingScrollPhysics(),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: <Widget>[
+                        _item(Product(
+                            id: 2,
+                            title: "Green T-Shirt",
+                            price: 234,
+                            size: 120,
+                            description: dummyText,
+                            image: "assets/images/1.png",
+                            color: kMainColor)),
+                        Divider(
+                          thickness: 1,
+                          height: 50,
+                        ),
+                        _item(Product(
+                            id: 1,
+                            title: "Grey T-Shirt",
+                            price: 50,
+                            size: 120,
+                            description: dummyText,
+                            image: "assets/images/3.png",
+                            color: kMainColor)),
+                        Divider(
+                          thickness: 1,
+                          height: 50,
+                        ),
+                        _item(Product(
+                            id: 3,
+                            title: "Black T-Shirt",
+                            price: 200,
+                            size: 120,
+                            description: dummyText,
+                            image: "assets/images/5.png",
+                            color: kMainColor)),
+                        Divider(
+                          thickness: 1,
+                          height: 50,
+                        ),
+                        _item(Product(
+                            id: 2,
+                            title: "Green T-Shirt",
+                            price: 234,
+                            size: 120,
+                            description: dummyText,
+                            image: "assets/images/1.png",
+                            color: kMainColor)),
+                        Divider(
+                          thickness: 1,
+                          height: 50,
+                        ),
+                        _item(Product(
+                            id: 1,
+                            title: "Grey T-Shirt",
+                            price: 50,
+                            size: 120,
+                            description: dummyText,
+                            image: "assets/images/3.png",
+                            color: kMainColor)),
+                        Divider(
+                          thickness: 1,
+                          height: 50,
+                        ),
+                        _item(Product(
+                            id: 1,
+                            title: "Grey T-Shirt",
+                            price: 50,
+                            size: 120,
+                            description: dummyText,
+                            image: "assets/images/3.png",
+                            color: kMainColor)),
+                        Divider(
+                          thickness: 1,
+                          height: 50,
+                        ),
+                      ],
                     ),
-                    _item(Product(
-                        id: 1,
-                        title: "Grey T-Shirt",
-                        price: 50,
-                        size: 120,
-                        description: dummyText,
-                        image: "assets/images/3.png",
-                        color: kMainColor)),
-                    Divider(
-                      thickness: 1,
-                      height: 50,
-                    ),
-                    _item(Product(
-                        id: 3,
-                        title: "Black T-Shirt",
-                        price: 200,
-                        size: 120,
-                        description: dummyText,
-                        image: "assets/images/5.png",
-                        color: kMainColor)),
-                    Divider(
-                      thickness: 1,
-                      height: 50,
-                    ),
-                    _item(Product(
-                        id: 2,
-                        title: "Green T-Shirt",
-                        price: 234,
-                        size: 120,
-                        description: dummyText,
-                        image: "assets/images/1.png",
-                        color: kMainColor)),
-                    Divider(
-                      thickness: 1,
-                      height: 50,
-                    ),
-                    _item(Product(
-                        id: 1,
-                        title: "Grey T-Shirt",
-                        price: 50,
-                        size: 120,
-                        description: dummyText,
-                        image: "assets/images/3.png",
-                        color: kMainColor)),
-                    Divider(
-                      thickness: 1,
-                      height: 50,
-                    ),
-                    _item(Product(
-                        id: 1,
-                        title: "Grey T-Shirt",
-                        price: 50,
-                        size: 120,
-                        description: dummyText,
-                        image: "assets/images/3.png",
-                        color: kMainColor)),
-                    Divider(
-                      thickness: 1,
-                      height: 50,
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Total Price"),
-                  Text("1450\$"),
-                ],
-              ),
-            ),
-            _submitButton(context)
-          ],
-        )
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text("Total Price"),
+                      Text("1450\$"),
+                    ],
+                  ),
+                ),
+                _submitButton(context)
+              ],
+            )
+        );
+      },
+
     );
   }
 }
