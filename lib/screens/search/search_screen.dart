@@ -14,6 +14,7 @@ class SearchScreen extends StatefulWidget {
 class _SearchScreenState extends State<SearchScreen> {
   var searchController = TextEditingController();
   List<Product> allproducts = products;
+  List<Product> listpro = products;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,9 +48,9 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             Expanded(
                 child: ListView.builder(
-                    itemCount: products.length,
+                    itemCount: allproducts.length,
                     itemBuilder: (context, index) {
-                      final product = products[index];
+                      final product = allproducts[index];
                       return ListTile(
                         leading:
                             Image.asset(product.image, width: 50, height: 50),
@@ -72,7 +73,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   void searchProduct(String query) {
-    final filter = allproducts.where((product) {
+    final filter = listpro.where((product) {
       final productTitle = product.title.toLowerCase();
       final input = query.toLowerCase();
       return productTitle.contains(input);
