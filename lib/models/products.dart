@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class Product {
-  final String image, title, description;
-  final int price, size, id;
+  final String image, title, description,size;
+  final int price,  id;
   final Color color;
   Product({
     required this.id,
@@ -22,7 +22,7 @@ List<Product> products = [
       id: 0,
       title: "Green T-shirt",
       price: 234,
-      size: 120,
+      size: "M",
       description: dummyText,
       image: "assets/images/1.png",
       color: kMainColor),
@@ -30,7 +30,7 @@ List<Product> products = [
       id: 1,
       title: "Blue T-shirt",
       price: 234,
-      size: 120,
+      size: "M",
       description: dummyText,
       image: "assets/images/2.png",
       color: kMainColor),
@@ -38,7 +38,7 @@ List<Product> products = [
       id: 2,
       title: "Grey T-shirt",
       price: 234,
-      size: 100,
+      size: "M",
       description: dummyText,
       image: "assets/images/3.png",
       color:kMainColor),
@@ -46,7 +46,7 @@ List<Product> products = [
       id: 3,
       title: "White T-shirt",
       price: 234,
-      size: 110,
+      size: "M",
       description: dummyText,
       image: "assets/images/4.png",
       color: kMainColor),
@@ -54,7 +54,7 @@ List<Product> products = [
       id: 4,
       title: "Black T-shirt",
       price: 234,
-      size: 120,
+      size: "M",
       description: dummyText,
       image: "assets/images/5.png",
       color: kMainColor),
@@ -62,7 +62,7 @@ List<Product> products = [
     id: 5,
     title: "Cyan T-Shirt",
     price: 234,
-    size: 120,
+    size: "M",
     description: dummyText,
     image: "assets/images/6.png",
     color: kMainColor,

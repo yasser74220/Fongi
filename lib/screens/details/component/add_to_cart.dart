@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fongi/screens/cart/shopping_cart.dart';
 import '../../../constants.dart';
 import '../../../models/products.dart';
+import '../../payment_gateway/personal-info_screen.dart';
 
 class AddToCart extends StatelessWidget {
   const AddToCart({
@@ -32,7 +34,7 @@ class AddToCart extends StatelessWidget {
                 "assets/icons/add_to_cart.svg",
                 color: product.color,
               ),
-              onPressed: () {},
+              onPressed: () =>Navigator.push(context , MaterialPageRoute(builder: (context) => ShoppingCartPage(),)),
             ),
           ),
           Expanded(
@@ -40,7 +42,7 @@ class AddToCart extends StatelessWidget {
               height: 50,
               child: TextButton(
                 style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(kMainColor)),
-                onPressed: () {},
+                onPressed: ()=>  Navigator.push(context , MaterialPageRoute(builder: (context) => PersonalInfo(),)),
                 child: Text(
                   "Buy  Now".toUpperCase(),
                   style: TextStyle(

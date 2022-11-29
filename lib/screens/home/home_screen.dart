@@ -11,6 +11,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: buildAppBar(context),
       body: Body(),
+
     );
   }
 
@@ -18,12 +19,9 @@ class HomeScreen extends StatelessWidget {
     return AppBar(
       backgroundColor: kMainColor ,
       elevation: 0,
-      leading: IconButton(
-        icon: SvgPicture.asset("assets/icons/back.svg"),
-        onPressed: () {},
-      ),
+
       title: Center(child: Text(
-          "    Fongi",
+          "Fongi",
         style: TextStyle(
 
             fontWeight: FontWeight.bold,
@@ -47,6 +45,7 @@ class HomeScreen extends StatelessWidget {
           );   },
         ),
         IconButton(
+
           icon: SvgPicture.asset(
             "assets/icons/cart.svg",
             // By default our  icon color is white
@@ -60,6 +59,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 );          },
         ),
+
         SizedBox(width: kDefaultPadding / 2)
       ],
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:fongi/screens/cart/shopping_cart.dart';
 import 'package:fongi/screens/details/component/body.dart';
+import 'package:fongi/screens/search/search_screen.dart';
 import '../../constants.dart';
 import '../../models/products.dart';
 
@@ -33,11 +35,11 @@ class DetailsScreen extends StatelessWidget {
       actions: <Widget>[
         IconButton(
           icon: SvgPicture.asset("assets/icons/search.svg"),
-          onPressed: () {},
+          onPressed: () => Navigator.push(context , MaterialPageRoute(builder: (context) => SearchScreen(),)),
         ),
         IconButton(
           icon: SvgPicture.asset("assets/icons/cart.svg"),
-          onPressed: () {},
+          onPressed: () => Navigator.push(context , MaterialPageRoute(builder: (context) => ShoppingCartPage(),)),
         ),
         SizedBox(width: kDefaultPadding / 2)
       ],
