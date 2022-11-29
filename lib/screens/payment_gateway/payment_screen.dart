@@ -19,7 +19,7 @@ class _PaymentState extends State<Payment> {
 
   var cardHolderNameController = TextEditingController();
 
-  var formKey = GlobalKey<FormState>();
+  var paymentFormKey = GlobalKey<FormState>();
 
   bool isSaved = false;
 
@@ -36,7 +36,7 @@ class _PaymentState extends State<Payment> {
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Form(
-              key: formKey,
+              key: paymentFormKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -72,7 +72,7 @@ class _PaymentState extends State<Payment> {
                     inputType: TextInputType.text,
                     validate: (value){
                       if(value!.isEmpty){
-                        'Enter your card Number';
+                        return 'Enter your card Number';
                       }
                       return null;
                     },
@@ -89,7 +89,7 @@ class _PaymentState extends State<Payment> {
                           inputType: TextInputType.text,
                           validate: (value){
                             if(value!.isEmpty){
-                              'Enter Expiration date';
+                              return 'Enter Expiration date';
                             }
                             return null;
                           },
@@ -105,7 +105,7 @@ class _PaymentState extends State<Payment> {
                           inputType: TextInputType.text,
                           validate: (value){
                             if(value!.isEmpty){
-                              'Enter your CVV';
+                              return 'Enter your CVV';
                             }
                             return null;
                           },
@@ -121,8 +121,8 @@ class _PaymentState extends State<Payment> {
                     label: 'Holder name',
                     inputType: TextInputType.text,
                     validate: (value){
-                      if(value!.isEmpty){
-                        'Enter the holder name';
+                      if(value == '' ||value!.isEmpty){
+                        return 'Enter the holder name';
                       }
                       return null;
                     },
@@ -157,7 +157,7 @@ class _PaymentState extends State<Payment> {
                   defaultButton(
                       text: 'pay now',
                       function: (){
-                        if (formKey.currentState!.validate())
+                        if (paymentFormKey.currentState!.validate())
                         {
                           print("Success");
                         }
