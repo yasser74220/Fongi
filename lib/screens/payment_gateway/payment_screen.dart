@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fongi/constants.dart';
-import 'package:fongi/screens/payment_gateway/components/components.dart';
+import 'package:fongi/screens/payment_gateway/components/DefaultButton.dart';
+import 'package:fongi/screens/payment_gateway/components/defaultFormField.dart';
 
 
 class Payment extends StatefulWidget {
@@ -66,7 +67,7 @@ class _PaymentState extends State<Payment> {
                   const SizedBox(
                     height: 15,
                   ),
-                  defaultFormField(
+                  DefaultFormField(
                     controller: cardNumberController,
                     label: 'Card NO',
                     inputType: TextInputType.text,
@@ -83,7 +84,7 @@ class _PaymentState extends State<Payment> {
                   Row(
                     children: [
                       Expanded(
-                        child: defaultFormField(
+                        child: DefaultFormField(
                           controller: expirationDateController,
                           label: 'MM/YY',
                           inputType: TextInputType.text,
@@ -99,7 +100,7 @@ class _PaymentState extends State<Payment> {
                         width: 25,
                       ),
                       Expanded(
-                        child: defaultFormField(
+                        child: DefaultFormField(
                           controller: cvvController,
                           label: 'CVV',
                           inputType: TextInputType.text,
@@ -116,7 +117,7 @@ class _PaymentState extends State<Payment> {
                   const SizedBox(
                     height: 15,
                   ),
-                  defaultFormField(
+                  DefaultFormField(
                     controller: cardHolderNameController,
                     label: 'Holder name',
                     inputType: TextInputType.text,
@@ -154,7 +155,7 @@ class _PaymentState extends State<Payment> {
                   const SizedBox(
                     height: 15,
                   ),
-                  defaultButton(
+                  DefaultButton(
                       text: 'pay now',
                       function: (){
                         if (paymentFormKey.currentState!.validate())
