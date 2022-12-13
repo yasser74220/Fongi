@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fongi/constants.dart';
 import 'package:fongi/screens/payment_gateway/components/components.dart';
+import 'package:fongi/screens/payment_gateway/components/defaultFormField.dart';
 import 'package:fongi/screens/payment_gateway/payment_screen.dart';
 
 
@@ -41,7 +42,7 @@ class PersonalInfo extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  defaultFormField(
+                  DefaultFormField(
                       controller: firstNameController,
                       label: 'First name',
                       inputType: TextInputType.text,
@@ -55,7 +56,7 @@ class PersonalInfo extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  defaultFormField(
+                  DefaultFormField(
                     controller: lastNameController,
                     label: 'Last name',
                     inputType: TextInputType.text,
@@ -69,7 +70,7 @@ class PersonalInfo extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  defaultFormField(
+                  DefaultFormField(
                     controller: addressController,
                     label: 'Address',
                     inputType: TextInputType.text,
@@ -83,7 +84,7 @@ class PersonalInfo extends StatelessWidget {
                   const SizedBox(
                     height: 20,
                   ),
-                  defaultFormField(
+                  DefaultFormField(
                     controller: phoneController,
                     label: 'Phone',
                     inputType: TextInputType.text,
