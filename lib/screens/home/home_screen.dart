@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fongi/screens/home/components/body.dart';
+import 'package:fongi/screens/home/components/categories.dart';
 import '../../constants.dart';
-import '../cart/shopping_cart.dart';
 import '../search/search_screen.dart';
-
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: buildAppBar(context),
-      body: Body(),
-
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+          appBar: buildAppBar(  context),
+          body: Categories()
+      ),
     );
   }
-
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
       backgroundColor: kMainColor ,
       elevation: 0,
-
+      leading: IconButton(
+        icon: SvgPicture.asset("assets/icons/back.svg"),
+        onPressed: () {},
+      ),
       title: Center(child: Text(
-          "Fongi",
+        "    Fongi",
         style: TextStyle(
 
             fontWeight: FontWeight.bold,
@@ -45,21 +48,13 @@ class HomeScreen extends StatelessWidget {
           );   },
         ),
         IconButton(
-
           icon: SvgPicture.asset(
             "assets/icons/cart.svg",
             // By default our  icon color is white
             color: kTextColor,
           ),
-          onPressed: () {
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ShoppingCartPage()
-                  ),
-                );          },
+          onPressed: () {},
         ),
-
         SizedBox(width: kDefaultPadding / 2)
       ],
     );

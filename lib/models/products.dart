@@ -1,73 +1,52 @@
-import 'package:flutter/material.dart';
+class products {
+  String? id;
+  String? title;
+  String? description;
+  int? price;
+  String? size;
+  String? color;
+  String? image;
+  String? category;
+  String? date;
+  int? iV;
 
-import '../constants.dart';
+  products(
+      {this.id,
+        this.title,
+        this.description,
+        this.price,
+        this.size,
+        this.color,
+        this.image,
+        this.category,
+        this.date,
+        this.iV});
 
-class Product {
-  final String image, title, description,size;
-  final int price,  id;
-  final Color color;
-  Product({
-    required this.id,
-    required this.image,
-    required this.title,
-    required this.price,
-    required this.description,
-    required this.size,
-    required this.color,
-  });
+  products.fromJson(Map<String, dynamic> json) {
+    id = json['_id'];
+    title = json['title'];
+    description = json['description'];
+    price = json['price'];
+    size = json['size'];
+    color = json['color'];
+    image = json['image'];
+    category = json['category'];
+    date = json['date'];
+    iV = json['__v'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['_id'] = this.id;
+    data['title'] = this.title;
+    data['description'] = this.description;
+    data['price'] = this.price;
+    data['size'] = this.size;
+    data['color'] = this.color;
+    data['image'] = this.image;
+    data['category'] = this.category;
+    data['date'] = this.date;
+    data['__v'] = this.iV;
+    return data;
+  }
 }
-
-List<Product> products = [
-  Product(
-      id: 0,
-      title: "Green T-shirt",
-      price: 234,
-      size: "M",
-      description: dummyText,
-      image: "assets/images/1.png",
-      color: kMainColor),
-  Product(
-      id: 1,
-      title: "Blue T-shirt",
-      price: 234,
-      size: "M",
-      description: dummyText,
-      image: "assets/images/2.png",
-      color: kMainColor),
-  Product(
-      id: 2,
-      title: "Grey T-shirt",
-      price: 234,
-      size: "M",
-      description: dummyText,
-      image: "assets/images/3.png",
-      color:kMainColor),
-  Product(
-      id: 3,
-      title: "White T-shirt",
-      price: 234,
-      size: "M",
-      description: dummyText,
-      image: "assets/images/4.png",
-      color: kMainColor),
-  Product(
-      id: 4,
-      title: "Black T-shirt",
-      price: 234,
-      size: "M",
-      description: dummyText,
-      image: "assets/images/5.png",
-      color: kMainColor),
-  Product(
-    id: 5,
-    title: "Cyan T-Shirt",
-    price: 234,
-    size: "M",
-    description: dummyText,
-    image: "assets/images/6.png",
-    color: kMainColor,
-  ),
-];
-
-String dummyText =
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since. When an unknown printer took a galley.";

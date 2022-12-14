@@ -8,14 +8,14 @@ import '../../models/products.dart';
 
 
 class DetailsScreen extends StatelessWidget {
-   final Product product;
+   final products product;
 
   const DetailsScreen({Key? key,  required this.product}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       // each product have a color
-      backgroundColor: product.color,
+      backgroundColor: kMainColor,
       appBar: buildAppBar(context),
       body: Body(product:product),
     );
@@ -23,7 +23,7 @@ class DetailsScreen extends StatelessWidget {
 
   AppBar buildAppBar(BuildContext context) {
     return AppBar(
-      backgroundColor: product.color,
+      backgroundColor:kMainColor,
       elevation: 0,
       leading: IconButton(
         icon: SvgPicture.asset(

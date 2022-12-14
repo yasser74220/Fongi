@@ -11,7 +11,7 @@ import '../../models/products.dart';
 class ShoppingCartPage extends StatelessWidget {
   ShoppingCartPage({Key? key}) : super(key: key);
 
-  Widget _item(Product model) {
+  Widget _item(products model) {
     return Material(
       child: Container(
         height: 80,
@@ -36,7 +36,7 @@ class ShoppingCartPage extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(10)),
                               child: Hero(
                                 tag: "${model.id}",
-                                child: Image.asset(model.image),
+                                child: Image.asset(model.image!),
                               ),
                             ),
                           ),
@@ -50,7 +50,7 @@ class ShoppingCartPage extends StatelessWidget {
             Expanded(
                 child: ListTile(
                     title: TitleText(
-                      text: model.title,
+                      text: model.title!,
                       fontSize: 15,
                       fontWeight: FontWeight.w700,
                     ),
@@ -137,79 +137,8 @@ class ShoppingCartPage extends StatelessWidget {
                     physics: BouncingScrollPhysics(),
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
-                      children: <Widget>[
-                        _item(Product(
-                            id: 2,
-                            title: "Green T-Shirt",
-                            price: 234,
-                            size: "M",
-                            description: dummyText,
-                            image: "assets/images/1.png",
-                            color: kMainColor)),
-                        Divider(
-                          thickness: 1,
-                          height: 50,
-                        ),
-                        _item(Product(
-                            id: 1,
-                            title: "Grey T-Shirt",
-                            price: 50,
-                            size: "M",
-                            description: dummyText,
-                            image: "assets/images/3.png",
-                            color: kMainColor)),
-                        Divider(
-                          thickness: 1,
-                          height: 50,
-                        ),
-                        _item(Product(
-                            id: 3,
-                            title: "Black T-Shirt",
-                            price: 200,
-                            size: "M",
-                            description: dummyText,
-                            image: "assets/images/5.png",
-                            color: kMainColor)),
-                        Divider(
-                          thickness: 1,
-                          height: 50,
-                        ),
-                        _item(Product(
-                            id: 2,
-                            title: "Green T-Shirt",
-                            price: 234,
-                            size:"M",
-                            description: dummyText,
-                            image: "assets/images/1.png",
-                            color: kMainColor)),
-                        Divider(
-                          thickness: 1,
-                          height: 50,
-                        ),
-                        _item(Product(
-                            id: 1,
-                            title: "Grey T-Shirt",
-                            price: 50,
-                            size: "M",
-                            description: dummyText,
-                            image: "assets/images/3.png",
-                            color: kMainColor)),
-                        Divider(
-                          thickness: 1,
-                          height: 50,
-                        ),
-                        _item(Product(
-                            id: 1,
-                            title: "Grey T-Shirt",
-                            price: 50,
-                            size: "M",
-                            description: dummyText,
-                            image: "assets/images/3.png",
-                            color: kMainColor)),
-                        Divider(
-                          thickness: 1,
-                          height: 50,
-                        ),
+                      children: [
+                        Container()
                       ],
                     ),
                   ),

@@ -8,7 +8,7 @@ class ProductTitleWithImage extends StatelessWidget {
     required this.product,
   }) : super(key: key);
 
-  final Product product;
+  final products product;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +18,11 @@ class ProductTitleWithImage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            "T_shirts",
+            "${product.category}",
             style: TextStyle(color: Colors.white),
           ),
           Text(
-            product.title,
+            product.title!,
             style: Theme.of(context)
                 .textTheme
                 .headline4
@@ -47,10 +47,7 @@ class ProductTitleWithImage extends StatelessWidget {
               Expanded(
                 child: Hero(
                   tag: "${product.id}",
-                  child: Image.asset(
-                    product.image,
-                    fit: BoxFit.fill,
-                  ),
+                  child: Image(image: NetworkImage(product.image!))
                 ),
               )
             ],

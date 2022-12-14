@@ -3,7 +3,7 @@ import '../../../constants.dart';
 import '../../../models/products.dart';
 
 class ItemCard extends StatelessWidget {
-  final Product product;
+  final products product;
   final VoidCallback press;
   const ItemCard({
     Key? key,
@@ -22,12 +22,12 @@ class ItemCard extends StatelessWidget {
             child: Container(
               padding: EdgeInsets.all(kDefaultPadding),
               decoration: BoxDecoration(
-                color: product.color,
+                color: kMainColor,
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Hero(
                 tag: "${product.id}",
-                child: Image.asset(product.image),
+                child: Image(image: NetworkImage('${product.image}')),
               ),
             ),
           ),
@@ -35,7 +35,7 @@ class ItemCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: kDefaultPadding / 4),
             child: Text(
               // products is out demo list
-              product.title,
+              product.title!,
               style: TextStyle(color: kTextLightColor),
             ),
           ),

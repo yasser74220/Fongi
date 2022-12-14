@@ -13,7 +13,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   var searchController = TextEditingController();
-    List<Product> allproducts = products;
+  var allproducts = all;
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,19 +50,33 @@ class _SearchScreenState extends State<SearchScreen> {
                     itemCount: allproducts.length,
                     itemBuilder: (context, index) {
                       final product = allproducts[index];
-                      return ListTile(
-                        leading:
-                            Image.asset(product.image, width: 50, height: 50),
-                        title: Text(product.title),
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DetailsScreen(
-                                  product: allproducts[index],
-                                ),
-                              ));
-                        },
+                      return Column(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+
+                              border: Border.all(color: kMainColor , width: 2,  ),
+                              borderRadius: BorderRadius.circular(8)
+              
+                            ),
+                            padding: EdgeInsets.all(10),
+                            child: ListTile(
+                              leading:
+                              Image.network(product.image!,height: 70,width: 70,),
+                              title: Text(product.title!),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => DetailsScreen(
+                                        product: allproducts[index],
+                                      ),
+                                    ));
+                              },
+                            ),
+                          ),
+                          SizedBox(height: 5,)
+                        ],
                       );
                     }))
           ],
@@ -72,8 +86,8 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   void searchProduct(String query) {
-    final filter = products.where((product) {
-      final productTitle = product.title.toLowerCase();
+    final filter = all.where((product) {
+      final productTitle = product.title!.toLowerCase();
       final input = query.toLowerCase();
       return productTitle.contains(input);
     }).toList();

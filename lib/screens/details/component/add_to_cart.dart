@@ -11,7 +11,7 @@ class AddToCart extends StatelessWidget {
     required this.product,
   }) : super(key: key);
 
-  final Product product;
+  final products product;
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +26,34 @@ class AddToCart extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(18),
               border: Border.all(
-                color: product.color,
+                color: kMainColor,
               ),
             ),
             child: IconButton(
               icon: SvgPicture.asset(
                 "assets/icons/add_to_cart.svg",
-                color: product.color,
+                color: kMainColor,
               ),
-              onPressed: () =>Navigator.push(context , MaterialPageRoute(builder: (context) => ShoppingCartPage(),)),
+              onPressed:
+                  () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ShoppingCartPage(),
+                  ))
+              ,
             ),
           ),
           Expanded(
             child: SizedBox(
               height: 50,
               child: TextButton(
-                style: ButtonStyle(backgroundColor: MaterialStatePropertyAll(kMainColor)),
-                onPressed: ()=>  Navigator.push(context , MaterialPageRoute(builder: (context) => PersonalInfo(),)),
+                style: ButtonStyle(
+                    backgroundColor: MaterialStatePropertyAll(kMainColor)),
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PersonalInfo(),
+                    )),
                 child: Text(
                   "Buy  Now".toUpperCase(),
                   style: TextStyle(
